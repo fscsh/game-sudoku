@@ -1,5 +1,3 @@
-
-//originboard;
 function isValidSudoku(board) {
 
     for (let i = 0; i < board.length; i++) {
@@ -96,29 +94,6 @@ function buildPlayBoard(board,Difficultylevel) {
     return board;
 }
 
-// // midium
-// function buildPlayBoardMidium(board) {
-//     //创造挖空的2D
-//     board = isValidSudoku(board);
-//     for (let i = 0; i < 20; i++) {
-//         let x = Math.floor(Math.random() * 9);
-//         let y = Math.floor(Math.random() * 9);
-//         board[x][y] = '.';
-//     }
-//     return board;
-// }
-//
-// //hard
-// function buildPlayBoardHard(board) {
-//     //创造挖空的2D
-//     board = isValidSudoku(board);
-//     for (let i = 0; i < 40; i++) {
-//         let x = Math.floor(Math.random() * 9);
-//         let y = Math.floor(Math.random() * 9);
-//         board[x][y] = '.';
-//     }
-//     return board;
-// }
 
 
 // checkboard:
@@ -134,29 +109,17 @@ function origintoStr(board){
 
     return board;
 }
-function playboardStr(board,Difficultylevel){
-    let buildboardStr = buildPlayBoard(board,Difficultylevel);
-    for (let i = 0; i < buildboardStr.length; i++) {
-        buildboardStr[i] = buildboardStr[i].join('');
-    }
-
-        buildboardStr = buildboardStr.join('');
-
-
-    return buildboardStr;
-}
-
-let example = [
-    ['6', '2', '5', '3', '4', '9', '7', '8', '1'],
-    ['9', '7', '4', '5', '1', '8', '6', '3', '2'],
-    ['3', '8', '1', '2', '7', '6', '9', '4', '5'],
-    ['2', '6', '7', '4', '9', '3', '1', '5', '8'],
-    ['1', '5', '3', '8', '2', '7', '4', '6', '9'],
-    ['4', '9', '8', '6', '5', '1', '2', '7', '3'],
-    ['5', '4', '9', '7', '3', '2', '8', '1', '6'],
-    ['7', '1', '6', '9', '8', '5', '3', '2', '4'],
-    ['8', '3', '2', '1', '6', '4', '5', '9', '7']
-]
+// function playboardStr(board,Difficultylevel){
+//     let buildboardStr = buildPlayBoard(board,Difficultylevel);
+//     for (let i = 0; i < buildboardStr.length; i++) {
+//         buildboardStr[i] = buildboardStr[i].join('');
+//     }
+//
+//         buildboardStr = buildboardStr.join('');
+//
+//
+//     return buildboardStr;
+// }
 let board = [
     '.........',
     '.........',
@@ -168,11 +131,7 @@ let board = [
     '.........',
     '.........'
 ]
-let Difficultylevel = 10;
-
-// console.log(isValidSudoku(board));
-// console.log(buildPlayBoardEasy(board));
-// console.log(buildPlayBoardMidium(board));
-// console.log(buildPlayBoardHard(board));
-// console.log(origintoStr(board));
-console.log(playboardStr(board,Difficultylevel));
+    for (var i = 0; i <81; i++) {
+        let val = origintoStr(board);
+        document.getElementById(i).innerHTML = val[i];
+    }

@@ -1,0 +1,15 @@
+table{
+    border-collapse: collapse;
+    border: 2px;
+    font-size: 30px;
+    color: black;
+    background-color: #eee;
+    width: 70%;
+}
+td{
+    border: 1px solid brown;
+    width: 10%;
+    padding-top: 5%;
+    justify-content: center;
+    text-align: center;
+}
