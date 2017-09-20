@@ -1,113 +1,144 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Shojumaru" rel="stylesheet">
+         <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet';
+
         <meta charset="utf-8">
         <title>Michael's sudoku</title>
         <link rel="stylesheet" href="css/board.css">
+        <link rel="stylesheet" href="css/botton.css">
     </head>
     <body>
-        <table >
+        <button class="action-button"id="start">Startgame</button>
+        <div class="level-container">
+            <button class="action-button" id="easy"></button>
+            <button class="action-button" id="midium"></button>
+            <button class="action-button" id="hard"></button>
+        </div>
+
+
+        <table id="gameboard">
             <tr>
-                <td id="0"></td>
-                <td id="1"></td>
-                <td id="2"></td>
-                <td id="3"></td>
-                <td id="4"></td>
-                <td id="5"></td>
-                <td id="6"></td>
-                <td id="7"></td>
-                <td id="8"></td>
+                <td class="bg" id="c0"></td>
+                <td class="bg2" id="c1"></td>
+                <td class="bg" id="c2"></td>
+                <td class="bg2" id="c3"></td>
+                <td class="bg" id="c4"></td>
+                <td class="bg2" id="c5"></td>
+                <td class="bg" id="c6"></td>
+                <td class="bg2" id="c7"></td>
+                <td class="bg" id="c8"></td>
             </tr>
 
             <tr>
-                <td id="9"></td>
-                <td id="10"></td>
-                <td id="11"></td>
-                <td id="12"></td>
-                <td id="13"></td>
-                <td id="14"></td>
-                <td id="15"></td>
-                <td id="16"></td>
-                <td id="17"></td>
+                <td class="bg2" id="c9"></td>
+                <td class="bg" id="c10"></td>
+                <td class="bg2" id="c11"></td>
+                <td class="bg" id="c12"></td>
+                <td class="bg2" id="c13"></td>
+                <td class="bg" id="c14"></td>
+                <td class="bg2" id="c15"></td>
+                <td class="bg" id="c16"></td>
+                <td class="bg2" id="c17"></td>
             </tr>
             <tr>
-                <td id="18"></td>
-                <td id="19"></td>
-                <td id="20"></td>
-                <td id="21"></td>
-                <td id="22"></td>
-                <td id="23"></td>
-                <td id="24"></td>
-                <td id="25"></td>
-                <td id="26"></td>
+                <td class="bg" id="c18"></td>
+                <td class="bg2" id="c19"></td>
+                <td class="bg" id="c20"></td>
+                <td class="bg2" id="c21"></td>
+                <td class="bg" id="c22"></td>
+                <td class="bg2" id="c23"></td>
+                <td class="bg" id="c24"></td>
+                <td class="bg2" id="c25"></td>
+                <td class="bg" id="c26"></td>
             </tr>
             <tr>
-                <td id="27"></td>
-                <td id="28"></td>
-                <td id="29"></td>
-                <td id="30"></td>
-                <td id="31"></td>
-                <td id="32"></td>
-                <td id="33"></td>
-                <td id="34"></td>
-                <td id="35"></td>
+                <td class="bg2" id="c27"></td>
+                <td class="bg" id="c28"></td>
+                <td class="bg2" id="c29"></td>
+                <td class="bg" id="c30"></td>
+                <td class="bg2" id="c31"></td>
+                <td class="bg" id="c32"></td>
+                <td class="bg2" id="c33"></td>
+                <td class="bg" id="c34"></td>
+                <td class="bg2" id="c35"></td>
             </tr>
             <tr>
-                <td id="36"></td>
-                <td id="37"></td>
-                <td id="38"></td>
-                <td id="39"></td>
-                <td id="40"></td>
-                <td id="41"></td>
-                <td id="42"></td>
-                <td id="43"></td>
-                <td id="44"></td>
+                <td class="bg" id="c36"></td>
+                <td class="bg2" id="c37"></td>
+                <td class="bg" id="c38"></td>
+                <td class="bg2" id="c39"></td>
+                <td class="bg" id="c40"></td>
+                <td class="bg2" id="c41"></td>
+                <td class="bg" id="c42"></td>
+                <td class="bg2" id="c43"></td>
+                <td class="bg" id="c44"></td>
             </tr>
             <tr>
-                <td id="45"></td>
-                <td id="46"></td>
-                <td id="47"></td>
-                <td id="48"></td>
-                <td id="49"></td>
-                <td id="50"></td>
-                <td id="51"></td>
-                <td id="52"></td>
-                <td id="53"></td>
+                <td class="bg2" id="c45"></td>
+                <td class="bg" id="c46"></td>
+                <td class="bg2" id="c47"></td>
+                <td class="bg" id="c48"></td>
+                <td class="bg2" id="c49"></td>
+                <td class="bg" id="c50"></td>
+                <td class="bg2" id="c51"></td>
+                <td class="bg" id="c52"></td>
+                <td class="bg2" id="c53"></td>
             </tr>
             <tr>
-                <td id="54"></td>
-                <td id="55"></td>
-                <td id="56"></td>
-                <td id="57"></td>
-                <td id="58"></td>
-                <td id="59"></td>
-                <td id="60"></td>
-                <td id="61"></td>
-                <td id="62"></td>
+                <td class="bg" id="c54"></td>
+                <td class="bg2" id="c55"></td>
+                <td class="bg" id="c56"></td>
+                <td class="bg2" id="c57"></td>
+                <td class="bg" id="c58"></td>
+                <td class="bg2" id="c59"></td>
+                <td class="bg" id="c60"></td>
+                <td class="bg2" id="c61"></td>
+                <td class="bg" id="c62"></td>
             </tr>
             <tr>
-                <td id="63"></td>
-                <td id="64"></td>
-                <td id="65"></td>
-                <td id="66"></td>
-                <td id="67"></td>
-                <td id="68"></td>
-                <td id="69"></td>
-                <td id="70"></td>
-                <td id="71"></td>
+                <td class="bg2" id="c63"></td>
+                <td class="bg" id="c64"></td>
+                <td class="bg2" id="c65"></td>
+                <td class="bg" id="c66"></td>
+                <td class="bg2" id="c67"></td>
+                <td class="bg" id="c68"></td>
+                <td class="bg2" id="c69"></td>
+                <td class="bg" id="c70"></td>
+                <td class="bg2" id="c71"></td>
             </tr>
             <tr>
-                <td id="72"></td>
-                <td id="73"></td>
-                <td id="74"></td>
-                <td id="75"></td>
-                <td id="76"></td>
-                <td id="77"></td>
-                <td id="78"></td>
-                <td id="79"></td>
-                <td id="80"></td>
+                <td class="bg" id="c72"></td>
+                <td class="bg2" id="c73"></td>
+                <td class="bg" id="c74"></td>
+                <td class="bg2" id="c75"></td>
+                <td class="bg" id="c76"></td>
+                <td class="bg2" id="c77"></td>
+                <td class="bg" id="c78"></td>
+                <td class="bg2" id="c79"></td>
+                <td class="bg" id="c80"></td>
             </tr>
         </table>
+        <hr>
+        <table id="answerchoice">
+            <tr>
+                <td id="a1">1</td>
+                <td id="a2">2</td>
+                <td id="a3">3</td>
+                <td id="a4">4</td>
+                <td id="a5">5</td>
+                <td id="a6">6</td>
+                <td id="a7">7</td>
+                <td id="a8">8</td>
+                <td id="a9">9</td>
+            </tr>
+        </table>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="js/inner.js"></script>
+        <script type="text/javascript" src="js/botton.js"></script>
+
+
+        </script>
     </body>
 </html>

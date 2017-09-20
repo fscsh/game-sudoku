@@ -1,15 +1,49 @@
-table{
-    border-collapse: collapse;
+table {
     border: 2px;
     font-size: 30px;
     color: black;
-    background-color: #eee;
-    width: 70%;
+    width: 600px;
+    height: 600px;
+    text-align: center;
+    display: absolute;
 }
-td{
-    border: 1px solid brown;
-    width: 10%;
-    padding-top: 5%;
+tr{
+    display: absolute;
+
+}
+#answerchoice{
+    width: 600px;
+    height: 69px
+}
+td {
+    border: 1px solid silver;
+    width: 69px;
     justify-content: center;
     text-align: center;
+    vertical-align: middle;
+    color: #black;
+    background-color: #eee;
+    /*box-shadow:6px 6px 6px rgba(20%,20%,40%,0.5),inset 1px 1px 4px 2px rgba(20%,20%,40%,0.5);*/
+    box-shadow: 2px 2px 2px rgba(20%, 20%, 40%, 0.6), 4px 4px 6px rgba(20%, 20%, 40%, 0.4), 6px 6px 12px rgba(20%, 20%, 40%, 0.4);
+    font-family: 'Shojumaru';
+    border-radius: 20px;
+}
+td:hover{
+    background-color: yellow;
+    cursor: pointer;
+    width: 72px;
+    display: active;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.bg {
+    /*border-width: 1px;*/
+    border-style: solid;
+    border-color: #BF942C;
+    width: 53px;
+    height: 53px;
+    background-color: #8F5D38;
 }

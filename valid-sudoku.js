@@ -2,9 +2,9 @@
 //originboard;
 function isValidSudoku(board) {
 
-    for (let i = 0; i < board.length; i++) {
-        board[i] = board[i].split('');
-    }
+    // for (let i = 0; i < board.length; i++) {
+    //     board[i] = board[i].split('');
+    // }
     let res = splitboard(board);
 
     return res;
@@ -174,5 +174,5 @@ let Difficultylevel = 10;
 // console.log(buildPlayBoardEasy(board));
 // console.log(buildPlayBoardMidium(board));
 // console.log(buildPlayBoardHard(board));
-// console.log(origintoStr(board));
+console.log(origintoStr(board));
 console.log(playboardStr(board,Difficultylevel));

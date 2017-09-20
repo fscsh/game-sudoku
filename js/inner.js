@@ -1,29 +1,20 @@
 function isValidSudoku(board) {
 
-    for (let i = 0; i < board.length; i++) {
-        board[i] = board[i].split('');
-    }
     let res = splitboard(board);
-
     return res;
 }
 
 function splitboard(board) {
-
-
     for (let i = 0; i < 9; i++) {
         for (let j = 0; j < 9; j++) {
             if (board[i][j] === '.') {
                 for (let s of shuffleArray()) {
-                    // console.log('s =',s);
                     if (helper(s, i, j, board)) {
                         board[i][j] = s;
-                        // console.log('now board');
                         if (splitboard(board)) {
                             return board;
                         } else {
                             board[i][j] = '.';
-                            // return ;
                         }
                     }
                 }
@@ -35,31 +26,18 @@ function splitboard(board) {
 }
 
 function helper(s, i, j, board) {
-
-    // for (let i = 0; i < board.length; i++) {
-    //     board[i] = board[i].split('');
-    // }
-    // console.log('board',board);
     let a = Math.floor(i / 3) * 3;
     let b = Math.floor(j / 3) * 3;
-    // console.log('a',a,'b',b);
     let arr = [];
-    // console.log(board[0][1]);
-    // arr.push(board[0][1]);
-    // console.log(arr);
 
     for (let q = a; q <= a + 2; q++) {
         for (let w = b; w <= b + 2; w++) {
             arr.push(board[q][w]);
             if (board[q][w] === s) return false;
-            // console.log('**arr',arr);
         }
     }
-    // console.log('arr = ',arr);
     for (let t = 0; t < 9; t++) {
-        // console.log('enter judge');
         if (board[i][t] === s || board[t][j] === s || arr.includes(s)) {
-            // console.log(board[0][1],'**',s);
             return false;
         }
     }
@@ -78,60 +56,55 @@ function shuffleArray(newboard) {
 }
 
 
-// let solveBoard = isValidSudoku(case4);
-
-
-
 // buildPlayBoard*****
-function buildPlayBoard(board,Difficultylevel) {
+function buildPlayBoard(board, Difficultylevel) {
     //创造挖空的2D
-    board = isValidSudoku(board);
-    for (let i = 0; i < Difficultylevel; i++) {
+    while (Difficultylevel > 0) {
         let x = Math.floor(Math.random() * 9);
         let y = Math.floor(Math.random() * 9);
-        board[x][y] = '.';
+        if (board[x][y] !== '.') {
+            board[x][y] = '.';
+            Difficultylevel--;
+        }
     }
     return board;
 }
 
-
-
 // checkboard:
-function origintoStr(board){
-    // let board = [];
-    let originalboardStr = isValidSudoku(board);
+function origintoStr(board) {
+    let originalboardStr = board ;
     for (let i = 0; i < originalboardStr.length; i++) {
         originalboardStr[i] = originalboardStr[i].join('');
     }
-
-        board = board.join('');
-
-
+    board = board.join('');
     return board;
 }
-// function playboardStr(board,Difficultylevel){
-//     let buildboardStr = buildPlayBoard(board,Difficultylevel);
-//     for (let i = 0; i < buildboardStr.length; i++) {
-//         buildboardStr[i] = buildboardStr[i].join('');
-//     }
-//
-//         buildboardStr = buildboardStr.join('');
-//
-//
-//     return buildboardStr;
-// }
-let board = [
-    '.........',
-    '.........',
-    '.........',
-    '.........',
-    '.........',
-    '.........',
-    '.........',
-    '.........',
-    '.........'
-]
-    for (var i = 0; i <81; i++) {
-        let val = origintoStr(board);
-        document.getElementById(i).innerHTML = val[i];
+
+function playboardStr(solveBoardStr, Difficultylevel) {
+    // var buildboardStr = buildPlayBoard(board, Difficultylevel);
+    while (Difficultylevel > 0) {
+        let x = Math.floor(Math.random() * 9);
+        let y = Math.floor(Math.random() * 9);
+        if (solveBoardStr[x][y] !== '.') {
+            solveBoardStr[x][y] = '.';
+            Difficultylevel--;
+        }
     }
+    for (let i = 0; i < solveBoardStr.length; i++) {
+        solveBoardStr[i] = solveBoardStr[i].join('');
+    }
+
+    let displayval = solveBoardStr.join('');
+    return displayval;
+}
+
+// Difficultylevel;
+// debugger
+// let originval = origintoStr(board);
+// let displayval = playboardStr(board, Difficultylevel);
+
+// for (var i = 0; i < 81; i++) {
+//     document.getElementById(i).innerHTML = displayval[i];
+// }
+// console.log(displayval);
+// console.log(displayval.split('').filter(x => x === '.').length);
