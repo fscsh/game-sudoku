@@ -1,0 +1,21 @@
+#win {
+    background-color: #FF7300;
+    width: 237px;
+    text-align: center;
+    border-radius: 20px;
+    position: absolute;
+    letter-spacing: 14px;
+    margin-top: 0;
+    left: 480px;
+
+}
+
+.gameover {
+    position: relative;
+    background-color: #FF7300;
+}
+h3 {
+    color: white;
+    font-family: 'Shojumaru';
+    font-size: 45px;
+}

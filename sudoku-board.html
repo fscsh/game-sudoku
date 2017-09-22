@@ -9,6 +9,7 @@
     <title>Michael's sudoku</title>
     <link rel="stylesheet" href="css/board.css">
     <link rel="stylesheet" href="css/botton.css">
+    <link rel="stylesheet" href="css/win.css">
 </head>
 
 <body>
@@ -122,8 +123,8 @@
             <td class="bg" id="c80"></td>
         </tr>
     </table>
-    <hr>
-    <table id="answerchoice">
+
+    <table class="answerchoice">
         <tr>
             <td id="a1">1</td>
             <td id="a2">2</td>
@@ -137,12 +138,14 @@
         </tr>
     </table>
     <div class="gameover">
-        <h3 id="win">WIN</h3>
+        <ul>
+            <h3 id="win">WIN</h3
+        </ul>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/inner.js"></script>
     <script type="text/javascript" src="js/botton.js"></script>
-
+    <script type="text/javascript" src="js/win.js"></script>
 
     </script>
 </body>

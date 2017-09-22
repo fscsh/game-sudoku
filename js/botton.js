@@ -1,4 +1,4 @@
-var Difficultylevel, board, answerBoardStr, displayval, chooseIdx, chooseAns, level,endtime = 0;
+var Difficultylevel, board, answerBoardStr, displayval, chooseIdx, chooseAns, idName,level,endtime = 0;
 $(document).ready(function() {
     $(".level-container").hide();
     $("#gameboard").hide();
@@ -6,9 +6,14 @@ $(document).ready(function() {
     document.getElementById("midium").innerHTML = "MIDIUM";
     document.getElementById("hard").innerHTML = "HARD";
 })
+$('#start').click(function(){
+    $('#start').hide();
+    $(".level-container").show();
+    $('.gameover').hide();
+})
 $("#easy").click(function() {
     Difficultylevel = 10;
-    level = 10;
+    level = 1;
     board = [
         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
@@ -111,24 +116,25 @@ $("#hard").click(function() {
     $("#gameboard").show();
 })
 
-$('#answerchoice').hide();
+$('.answerchoice').hide();
 $('#gameboard').click(function(e) {
     if (e.target.innerHTML === '.') {
         // debugger
 
-        let idName = e.target.id;
-        $('#' + idName).css('background', 'green');
+        idName = e.target.id;
+        $('#' + idName).css('background', '#eee');
         chooseIdx = idName.substring(idName.lastIndexOf('c') + 1);
         chooseAns = answerBoardStr[chooseIdx];
         // debugger
 
-        $('#answerchoice').show();
+        $('.answerchoice').show();
     } else {
-        $('#answerchoice').hide();
-
+        $('.answerchoice').hide();
+        $('#gameboard td').css('background', '#A1755C');
     }
 })
-$('#answerchoice').click(function(e) {
+
+$('.answerchoice').click(function(e) {
 
     let idChoose = e.target.id;
     answerIdx = idChoose.substring(idChoose.lastIndexOf('a') + 1);
@@ -138,7 +144,7 @@ $('#answerchoice').click(function(e) {
         endtime++;
         winCheck();
         let optionCorrect = '#c' + chooseIdx;
-        $(optionCorrect).css('background', 'white');
+        $(optionCorrect).css('background', '#A1755C');
     } else {
         // document.getElementById('c'+chooseIdx).innerHTML = chooseAns;
         let optionName = '#c' + chooseIdx;
@@ -151,10 +157,11 @@ $('.gameover').hide();
 
 function winCheck() {
     if (endtime === level) {
+        $('#start').show();
         $('.gameover').show();
         $('#gameboard').hide();
-        $('#answerchoice').hide();
-        $('start').show();
+        $('.answerchoice').hide();
+        $('.level-container').hide();
     }else {
         $('.gameover').hide();
 

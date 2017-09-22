@@ -22,16 +22,15 @@ td {
     text-align: center;
     vertical-align: middle;
     color: #black;
-    background-color: #eee;
+    background-color: #A1755C;
     /*box-shadow:6px 6px 6px rgba(20%,20%,40%,0.5),inset 1px 1px 4px 2px rgba(20%,20%,40%,0.5);*/
     box-shadow: 2px 2px 2px rgba(20%, 20%, 40%, 0.6), 4px 4px 6px rgba(20%, 20%, 40%, 0.4), 6px 6px 12px rgba(20%, 20%, 40%, 0.4);
     font-family: 'Shojumaru';
     border-radius: 20px;
 }
 td:hover{
-    background-color: yellow;
+    background-color: #fff;
     cursor: pointer;
-    /*width: 72px;*/
     display: active;
     top: 0;
     bottom: 0;
@@ -46,4 +45,15 @@ td:hover{
     width: 53px;
     height: 53px;
     background-color: #8F5D38;
+}
+.answerchoice{
+    height: 72px;
+}
+.answerchoice td{
+    border-radius: 30px;
+    border: 1px solid silver;
+    height: 20px;
+    color: white;
+    font-family: 'Shojumaru';
+    background-color: #314E6C
 }
