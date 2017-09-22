@@ -31,7 +31,7 @@ td {
 td:hover{
     background-color: yellow;
     cursor: pointer;
-    width: 72px;
+    /*width: 72px;*/
     display: active;
     top: 0;
     bottom: 0;

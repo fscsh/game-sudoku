@@ -1,5 +1,4 @@
 function isValidSudoku(board) {
-
     let res = splitboard(board);
     return res;
 }
@@ -72,39 +71,47 @@ function buildPlayBoard(board, Difficultylevel) {
 
 // checkboard:
 function origintoStr(board) {
-    let originalboardStr = board ;
-    for (let i = 0; i < originalboardStr.length; i++) {
-        originalboardStr[i] = originalboardStr[i].join('');
-    }
+    // let originalboardStr = board;
+    // for (let i = 0; i < originalboardStr.length; i++) {
+    //     originalboardStr[i] = originalboardStr[i].join('');
+    // }
     board = board.join('');
     return board;
 }
 
-function playboardStr(solveBoardStr, Difficultylevel) {
+function playboardStr(useBoard, Difficultylevel) {
     // var buildboardStr = buildPlayBoard(board, Difficultylevel);
     while (Difficultylevel > 0) {
         let x = Math.floor(Math.random() * 9);
         let y = Math.floor(Math.random() * 9);
-        if (solveBoardStr[x][y] !== '.') {
-            solveBoardStr[x][y] = '.';
+        if (useBoard[x][y] !== '.') {
+            useBoard[x][y] = '.';
             Difficultylevel--;
         }
     }
-    for (let i = 0; i < solveBoardStr.length; i++) {
-        solveBoardStr[i] = solveBoardStr[i].join('');
+
+    for (let i = 0; i < useBoard.length; i++) {
+        useBoard[i] = useBoard[i].join('');
     }
 
-    let displayval = solveBoardStr.join('');
+    let displayval = useBoard.join('');
     return displayval;
 }
 
-// Difficultylevel;
-// debugger
-// let originval = origintoStr(board);
-// let displayval = playboardStr(board, Difficultylevel);
+
 
 // for (var i = 0; i < 81; i++) {
-//     document.getElementById(i).innerHTML = displayval[i];
+//     if (document.getElementById('c'+i).innerHTML = displayval[i];) {
+//
+//     }
+//
+//
 // }
+
+
+
+
+
+
 // console.log(displayval);
 // console.log(displayval.split('').filter(x => x === '.').length);

@@ -1,11 +1,10 @@
-var Difficultylevel, board;
+var Difficultylevel, board, answerBoardStr, displayval, chooseIdx, chooseAns, endtime = 0;
 $(document).ready(function() {
     // $(".level-container").hide();
     $("#gameboard").hide();
     document.getElementById("easy").innerHTML = "EASY";
     document.getElementById("midium").innerHTML = "MIDIUM";
     document.getElementById("hard").innerHTML = "HARD";
-
 })
 $("#easy").click(function() {
     Difficultylevel = 10;
@@ -20,74 +19,63 @@ $("#easy").click(function() {
         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
         ['.', '.', '.', '.', '.', '.', '.', '.', '.']
     ];
-    let solveBoardStr = isValidSudoku(board).slice();
-    // let nextBoardStr = isValidSudoku(board).slice();
-    let displayval = playboardStr(solveBoardStr, Difficultylevel);
-    // debugger
-    // let correctboard = origintoStr(solveBoardStr);
+    solveBoardStr = isValidSudoku(board);
+    for (let i = 0; i < solveBoardStr.length; i++) {
+        solveBoardStr[i] = solveBoardStr[i].join('');
+    }
+    answerBoardStr = origintoStr(solveBoardStr);
+    let useBoard = [];
+    for (let i = 0; i < solveBoardStr.length; i++) {
+        let arr = [];
+        for (let j = 0; j < solveBoardStr[i].length; j++) {
+            arr.push(solveBoardStr[i][j])
+        }
+        useBoard.push(arr);
+    }
+    displayval = playboardStr(useBoard, Difficultylevel);
 
     for (var i = 0; i < 81; i++) {
         document.getElementById('c' + i).innerHTML = displayval[i];
     }
     $("#gameboard").show();
 })
-$("#midium").click(function() {
-    Difficultylevel = 20;
-    board = [
-        ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
-        ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
-        ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
-        ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
-        ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
-        ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
-        ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
-        ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
-        ['.', '.', '.', '.', '.', '.', '.', '.', '.']
-    ];
-    let solveBoardStr = isValidSudoku(board);
-    let correctboard = origintoStr(solveBoardStr);
-    // debugger
-    let displayval = playboardStr(solveBoardStr, Difficultylevel);
+$('#answerchoice').hide();
+$('#gameboard').click(function(e) {
+    if (e.target.innerHTML === '.') {
+        // debugger
+        let idName = e.target.id;
+        $('#' + idName).css('background', 'green');
+        chooseIdx = idName.substring(idName.lastIndexOf('c') + 1);
+        chooseAns = answerBoardStr[chooseIdx];
+        // debugger
+        endtime++;
+        winCheck();
+        $('#answerchoice').show();
+    } else {
+        $('#answerchoice').hide();
 
-
-
-    for (var i = 0; i < 81; i++) {
-        document.getElementById(i).innerHTML = displayval[i];
     }
-    $("#gameboard").show();
 })
-$("#hard").click(function() {
-
-    Difficultylevel = 30;
-    board = [
-        ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
-        ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
-        ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
-        ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
-        ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
-        ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
-        ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
-        ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
-        ['.', '.', '.', '.', '.', '.', '.', '.', '.']
-    ];
-    let solveBoardStr = isValidSudoku(board);
-    let correctboard = origintoStr(solveBoardStr);
-    // debugger
-    let displayval = playboardStr(solveBoardStr, Difficultylevel);
-    for (var i = 0; i < 81; i++) {
-        document.getElementById(i).innerHTML = displayval[i];
+$('#answerchoice').click(function(e) {
+    let idChoose = e.target.id;
+    answerIdx = idChoose.substring(idChoose.lastIndexOf('a') + 1);
+    if (answerIdx === chooseAns) {
+        console.log('correct!');
+        document.getElementById('c' + chooseIdx).innerHTML = chooseAns;
+        let optionCorrect = '#c' + chooseIdx;
+        $(optionCorrect).css('background', 'white');
+    } else {
+        // document.getElementById('c'+chooseIdx).innerHTML = chooseAns;
+        let optionName = '#c' + chooseIdx;
+        $(optionName).css('background', 'red');
     }
-    $("#gameboard").show();
 })
-// var correctanswer = 0;
-// $("#0").click(function(){
-//     correctanswer = correctboard[0];
-//     // for (var i = 1; i <= 9; i++) {
-//         if ($("#a1").click) {
-//             alert("Clicked");
-//         }else {
-//             alert("wrong!");
-//         }
-//
-//     // }
-// })
+
+$('.gameover').hide();
+
+function winCheck() {
+    if (endtime === 1) {
+        $('.gameover').show();
+        $('#gameboard').hide();
+    }
+}
