@@ -13,7 +13,7 @@ $('#start').click(function(){
 })
 $("#easy").click(function() {
     Difficultylevel = 10;
-    level = 1;
+    level = 10;
     board = [
         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],

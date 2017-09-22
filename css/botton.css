@@ -1,5 +1,5 @@
 .action-button {
-    position: relative;
+    /*position: relative;*/
     padding: 10px 40px;
     margin: 0px 10px 10px 0px;
     float: left;
@@ -9,11 +9,9 @@
     color: #FFF;
     text-decoration: none;
     cursor: pointer;
+    letter-spacing: 3px;
 }
 
-.action-button:hover{
-
-}
 
 .action-button:active {
     transform: translate(0px, 5px);

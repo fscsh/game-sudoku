@@ -1,4 +1,11 @@
-table {
+body, html {
+  background-color:#FAF3EB;
+}
+.top-button{
+    margin-top: 10px;
+        /*padding: 22px;*/
+}
+.middle-board table {
     border: 2px;
     font-size: 30px;
     color: black;
@@ -7,15 +14,14 @@ table {
     text-align: center;
     display: absolute;
 }
-tr{
-    display: absolute;
-
+.middle-board{
+    margin-top: 20px;
 }
 #answerchoice{
     width: 600px;
     height: 69px
 }
-td {
+.middle-board td {
     border: 1px solid silver;
     width: 69px;
     justify-content: center;
@@ -28,7 +34,7 @@ td {
     font-family: 'Shojumaru';
     border-radius: 20px;
 }
-td:hover{
+.middle-board td:hover{
     background-color: #fff;
     cursor: pointer;
     display: active;
@@ -38,22 +44,32 @@ td:hover{
     right: 0;
 }
 
-.bg {
-    /*border-width: 1px;*/
-    border-style: solid;
-    border-color: #BF942C;
-    width: 53px;
-    height: 53px;
-    background-color: #8F5D38;
-}
 .answerchoice{
     height: 72px;
+    width: 600px;
 }
 .answerchoice td{
     border-radius: 30px;
+    font-size: 30px;
     border: 1px solid silver;
     height: 20px;
     color: white;
     font-family: 'Shojumaru';
-    background-color: #314E6C
+    background-color: #314E6C;
+    border: 1px;
+    width: 69px;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+    box-shadow: 2px 2px 2px rgba(20%, 20%, 40%, 0.6), 4px 4px 6px rgba(20%, 20%, 40%, 0.4), 6px 6px 12px rgba(20%, 20%, 40%, 0.4);
+}
+.answerchoice td:hover{
+    background-color: #fff;
+    cursor: pointer;
+    display: active;
+    color: black;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }

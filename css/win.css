@@ -1,21 +1,29 @@
-#win {
-    background-color: #FF7300;
-    width: 237px;
-    text-align: center;
-    border-radius: 20px;
-    position: absolute;
-    letter-spacing: 14px;
-    margin-top: 0;
-    left: 480px;
+@import url("https://fonts.googleapis.com/css?family=Archivo+Black|Chewy");
 
-}
-
-.gameover {
-    position: relative;
-    background-color: #FF7300;
-}
 h3 {
-    color: white;
     font-family: 'Shojumaru';
-    font-size: 45px;
+    letter-spacing: 5px;
+
 }
+.gameover {
+  width: 80%;
+  height: 70%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  font-size: 1000%;
+  -webkit-text-fill-color: transparent;
+  background: -webkit-linear-gradient(transparent, transparent);
+  background: url(../img/rainbow.jpg) repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: cover;
+  background-position: 0px center;
+  animation: slide 1.5s ease-in-out infinite; }
+  @keyframes slide {
+  100% {
+    background-position: -1000px center; } }
