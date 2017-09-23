@@ -11,6 +11,8 @@ $('#start').click(function() {
     $('#start').hide();
     $(".level-container").show();
     $('.gameover').hide();
+    $('.progress').hide();
+    $("#box").animate({width: 0}, 1000);
 })
 $("#easy").click(function() {
     Difficultylevel = 10;
@@ -119,6 +121,41 @@ $("#hard").click(function() {
     }
     $("#gameboard").show();
 })
+$("#test").click(function() {
+    Difficultylevel = 2;
+    processlevel = 300;
+    level = 2;
+    board = [
+        ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
+        ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
+        ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
+        ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
+        ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
+        ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
+        ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
+        ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
+        ['.', '.', '.', '.', '.', '.', '.', '.', '.']
+    ];
+    solveBoardStr = isValidSudoku(board);
+    for (let i = 0; i < solveBoardStr.length; i++) {
+        solveBoardStr[i] = solveBoardStr[i].join('');
+    }
+    answerBoardStr = origintoStr(solveBoardStr);
+    let useBoard = [];
+    for (let i = 0; i < solveBoardStr.length; i++) {
+        let arr = [];
+        for (let j = 0; j < solveBoardStr[i].length; j++) {
+            arr.push(solveBoardStr[i][j])
+        }
+        useBoard.push(arr);
+    }
+    displayval = playboardStr(useBoard, Difficultylevel);
+
+    for (var i = 0; i < 81; i++) {
+        document.getElementById('c' + i).innerHTML = displayval[i];
+    }
+    $("#gameboard").show();
+})
 
 $('.answerchoice').hide();
 $('#gameboard').click(function(e) {
@@ -126,6 +163,7 @@ $('#gameboard').click(function(e) {
         // debugger
 
         idName = e.target.id;
+        $('#gameboard td').css('background', '#A1755C');
         $('#' + idName).css('background', '#eee');
         chooseIdx = idName.substring(idName.lastIndexOf('c') + 1);
         chooseAns = answerBoardStr[chooseIdx];
@@ -141,6 +179,7 @@ $('#gameboard').click(function(e) {
 $('.answerchoice').click(function(e) {
 
     let idChoose = e.target.id;
+    $('.progress').show();
     answerIdx = idChoose.substring(idChoose.lastIndexOf('a') + 1);
     if (answerIdx === chooseAns) {
         // console.log('correct!');
@@ -169,7 +208,7 @@ function processbar() {
     $("#box").animate({width: boxwidth}, 1000);
     // debugger
 }
-
+$('.progress').hide();
 $('.gameover').hide();
 
 function winCheck() {
