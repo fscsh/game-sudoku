@@ -15,6 +15,7 @@ $('#start').click(function() {
     $("#box").animate({width: 0}, 1000);
 })
 $("#easy").click(function() {
+    $('#gameboard td').css('background', '#A1755C');
     Difficultylevel = 10;
     processlevel = 60;
     level = 10;
@@ -51,6 +52,7 @@ $("#easy").click(function() {
 })
 
 $("#midium").click(function() {
+    $('#gameboard td').css('background', '#A1755C');
     Difficultylevel = 20;
     processlevel = 30;
     level = 20;
@@ -87,6 +89,7 @@ $("#midium").click(function() {
 })
 
 $("#hard").click(function() {
+    $('#gameboard td').css('background', '#A1755C');
     Difficultylevel = 50;
     level = 50;
     processlevel = 12;
@@ -122,6 +125,7 @@ $("#hard").click(function() {
     $("#gameboard").show();
 })
 $("#test").click(function() {
+    $('#gameboard td').css('background', '#A1755C');
     Difficultylevel = 2;
     processlevel = 300;
     level = 2;
@@ -158,6 +162,7 @@ $("#test").click(function() {
 })
 
 $('.answerchoice').hide();
+
 $('#gameboard').click(function(e) {
     if (e.target.innerHTML === '.') {
         // debugger
@@ -167,7 +172,6 @@ $('#gameboard').click(function(e) {
         $('#' + idName).css('background', '#eee');
         chooseIdx = idName.substring(idName.lastIndexOf('c') + 1);
         chooseAns = answerBoardStr[chooseIdx];
-        // debugger
 
         $('.answerchoice').show();
     } else {
