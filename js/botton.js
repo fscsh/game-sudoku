@@ -1,5 +1,5 @@
 var Difficultylevel, board, answerBoardStr, displayval, chooseIdx, chooseAns, idName, level, point = 0,
-    endtime = 0 ,boxwidth = 0;
+    endtime = 0 ,boxwidth = 0 ,processlevel;
 $(document).ready(function() {
     $(".level-container").hide();
     $("#gameboard").hide();
@@ -14,6 +14,7 @@ $('#start').click(function() {
 })
 $("#easy").click(function() {
     Difficultylevel = 10;
+    processlevel = 60;
     level = 10;
     board = [
         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
@@ -49,6 +50,7 @@ $("#easy").click(function() {
 
 $("#midium").click(function() {
     Difficultylevel = 20;
+    processlevel = 30;
     level = 20;
     board = [
         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
@@ -85,6 +87,7 @@ $("#midium").click(function() {
 $("#hard").click(function() {
     Difficultylevel = 50;
     level = 50;
+    processlevel = 12;
     board = [
         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
@@ -143,7 +146,7 @@ $('.answerchoice').click(function(e) {
         // console.log('correct!');
         document.getElementById('c' + chooseIdx).innerHTML = chooseAns;
         endtime++;
-        boxwidth += 60;
+        boxwidth += processlevel;
         let tmpPoint = parseInt(answerIdx);
         point += tmpPoint;
         // showpoint();
