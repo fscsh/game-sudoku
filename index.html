@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="css/board.css">
     <link rel="stylesheet" href="css/botton.css">
     <link rel="stylesheet" href="css/win.css">
+    <link rel="stylesheet" href="css/processBar.css">
 </head>
 
 <body>
-    
+
     <div class="top-button">
         <button class="action-button" id="start">Startgame</button>
         <div class="level-container">
@@ -140,13 +141,19 @@
         </tr>
     </table>
     <div class="gameover">
-            <h3 id="win">WIN</h3>
+        <h3 id="win">WIN</h3>
     </div>
+    <div class="pointrecord">
+        <h3 id="mypoint"></h3>
+    </div>
+    <div class="progress-wrap progress" >
+        <div class="progress-bar progress" id="box"></div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="js/inner.js"></script>
-    <script type="text/javascript" src="js/botton.js"></script>
-    <script type="text/javascript" src="js/win.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/inner.js"></script>
+        <script type="text/javascript" src="js/botton.js"></script>
+        <script type="text/javascript" src="js/win.js"></script>
+        <script type="text/javascript" src="js/processBar.js"></script>
 </body>
 
 </html>

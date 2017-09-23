@@ -1,4 +1,5 @@
-var Difficultylevel, board, answerBoardStr, displayval, chooseIdx, chooseAns, idName,level,endtime = 0;
+var Difficultylevel, board, answerBoardStr, displayval, chooseIdx, chooseAns, idName, level, point = 0,
+    endtime = 0 ,boxwidth = 0;
 $(document).ready(function() {
     $(".level-container").hide();
     $("#gameboard").hide();
@@ -6,7 +7,7 @@ $(document).ready(function() {
     document.getElementById("midium").innerHTML = "MIDIUM";
     document.getElementById("hard").innerHTML = "HARD";
 })
-$('#start').click(function(){
+$('#start').click(function() {
     $('#start').hide();
     $(".level-container").show();
     $('.gameover').hide();
@@ -142,7 +143,12 @@ $('.answerchoice').click(function(e) {
         // console.log('correct!');
         document.getElementById('c' + chooseIdx).innerHTML = chooseAns;
         endtime++;
+        boxwidth += 60;
+        let tmpPoint = parseInt(answerIdx);
+        point += tmpPoint;
+        // showpoint();
         winCheck();
+        processbar();
         let optionCorrect = '#c' + chooseIdx;
         $(optionCorrect).css('background', '#A1755C');
     } else {
@@ -153,6 +159,14 @@ $('.answerchoice').click(function(e) {
     }
 })
 
+// var boxwidth = 0;
+// boxwidth = endtime * 50;
+
+function processbar() {
+    $("#box").animate({width: boxwidth}, 1000);
+    // debugger
+}
+
 $('.gameover').hide();
 
 function winCheck() {
@@ -162,8 +176,12 @@ function winCheck() {
         $('#gameboard').hide();
         $('.answerchoice').hide();
         $('.level-container').hide();
-    }else {
+    } else {
         $('.gameover').hide();
 
     }
 }
+
+// function showpoint() {
+//     document.getElementById("mypoint").innerHTML = point;
+// }

@@ -1,0 +1,17 @@
+#box {
+    background: #98bf21;
+    height: 50px;
+    width: 1;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+.progress-wrap {
+    background: grey;
+    margin: 20px 0;
+    overflow: hidden;
+    position: relative;
+    height: 50px;
+    width: 600px;
+}
