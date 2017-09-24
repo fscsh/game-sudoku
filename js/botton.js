@@ -19,6 +19,8 @@ $("#easy").click(function() {
     Difficultylevel = 10;
     processlevel = 60;
     level = 10;
+    endtime = 0;
+    $("#box").animate({width: 0}, 1000);
     board = [
         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
@@ -52,10 +54,12 @@ $("#easy").click(function() {
 })
 
 $("#midium").click(function() {
+    $("#box").animate({width: 0}, 1000);
     $('#gameboard td').css('background', '#A1755C');
     Difficultylevel = 20;
     processlevel = 30;
     level = 20;
+    endtime = 0;
     board = [
         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
@@ -89,10 +93,12 @@ $("#midium").click(function() {
 })
 
 $("#hard").click(function() {
+    $("#box").animate({width: 0}, 1000);
     $('#gameboard td').css('background', '#A1755C');
     Difficultylevel = 50;
     level = 50;
     processlevel = 12;
+    endtime = 0;
     board = [
         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
@@ -125,10 +131,12 @@ $("#hard").click(function() {
     $("#gameboard").show();
 })
 $("#test").click(function() {
+    $("#box").animate({width: 0}, 1000);
     $('#gameboard td').css('background', '#A1755C');
     Difficultylevel = 2;
     processlevel = 300;
     level = 2;
+    endtime = 0;
     board = [
         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
