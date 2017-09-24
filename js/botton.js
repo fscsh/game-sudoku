@@ -176,6 +176,11 @@ $("#test").click(function() {
 $('.answerchoice').hide();
 
 $('#gameboard').click(function(e) {
+    if (e.target.innerHTML !== '.') {
+
+        document.getElementById('c' + fixIdx).innerHTML = '.';
+    }
+
     if (e.target.innerHTML === '.') {
         // debugger
 
@@ -186,7 +191,8 @@ $('#gameboard').click(function(e) {
         chooseAns = answerBoardStr[chooseIdx];
 
         $('.answerchoice').show();
-        document.getElementById('c' + fixIdx).innerHTML = '.';
+
+            document.getElementById('c' + fixIdx).innerHTML = '.';
     } else {
         $('.answerchoice').hide();
         $('#gameboard td').css('background', '#A1755C');
@@ -205,6 +211,8 @@ $('.answerchoice').click(function(e) {
         boxwidth += processlevel;
         let tmpPoint = parseInt(answerIdx);
         point += tmpPoint;
+
+        fixIdx = 100;
         // showpoint();
         winCheck();
         processbar();
@@ -217,6 +225,7 @@ $('.answerchoice').click(function(e) {
         $(optionName).css('background', 'red');
         document.getElementById('c' + chooseIdx).innerHTML = answerIdx;
         fixIdx =chooseIdx;
+
     }
 
 })
