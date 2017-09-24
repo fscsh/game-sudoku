@@ -1,5 +1,5 @@
 var Difficultylevel, board, answerBoardStr, displayval, chooseIdx, chooseAns, idName, level, point = 0,
-    endtime = 0 ,boxwidth = 0 ,processlevel;
+    endtime = 0 ,boxwidth = 0 ,processlevel, fixIdx;
 $(document).ready(function() {
     $(".level-container").hide();
     $("#gameboard").hide();
@@ -186,6 +186,7 @@ $('#gameboard').click(function(e) {
         chooseAns = answerBoardStr[chooseIdx];
 
         $('.answerchoice').show();
+        document.getElementById('c' + fixIdx).innerHTML = '.';
     } else {
         $('.answerchoice').hide();
         $('#gameboard td').css('background', '#A1755C');
@@ -215,7 +216,9 @@ $('.answerchoice').click(function(e) {
         let optionName = '#c' + chooseIdx;
         $(optionName).css('background', 'red');
         document.getElementById('c' + chooseIdx).innerHTML = answerIdx;
+        fixIdx =chooseIdx;
     }
+
 })
 
 // var boxwidth = 0;
