@@ -17,31 +17,31 @@
 }
 
 #start {
-    background-color: #3498DB;
+    background-color: #333;
     border-bottom: 5px solid #2980B9;
     text-shadow: 0px -2px #2980B9;
 }
 
 #hard {
-    background-color: #E74C3C;
-    border-bottom: 5px solid #BD3E31;
-    text-shadow: 0px -2px #BD3E31;
+    background-color: #C52F30;
+    border-bottom: 5px solid black;
+    text-shadow: 0px -2px black;
 }
-
-#middium {
-    background-color: #82BF56;
-    border-bottom: 5px solid #669644;
-    text-shadow: 0px -2px #669644;
+#midium {
+    background-color: #aeb5c5;
+    border-bottom: 5px solid #504e54;
+    text-shadow: 0px -2px #504e54;
 }
 
 #easy {
-    background-color: #F2CF66;
-    border-bottom: 5px solid #D1B358;
-    text-shadow: 0px -2px #D1B358;
+    background-color: #F6AE1C;
+    border-bottom: 5px solid #669644;
+    text-shadow: 0px -2px #669644;
 }
+
 
 #test {
     background-color: black;
-    border-bottom: 5px solid #669644;
-    text-shadow: 0px -2px #669644;
+    border-bottom: 5px solid #C52F30;
+    text-shadow: 0px -2px #C52F30;
 }

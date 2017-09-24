@@ -20,6 +20,7 @@ $("#easy").click(function() {
     processlevel = 60;
     level = 10;
     endtime = 0;
+    boxwidth = 0;
     $("#box").animate({width: 0}, 1000);
     board = [
         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
@@ -60,6 +61,7 @@ $("#midium").click(function() {
     processlevel = 30;
     level = 20;
     endtime = 0;
+    boxwidth = 0;
     board = [
         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
@@ -99,6 +101,7 @@ $("#hard").click(function() {
     level = 50;
     processlevel = 12;
     endtime = 0;
+    boxwidth = 0;
     board = [
         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
@@ -137,6 +140,7 @@ $("#test").click(function() {
     processlevel = 300;
     level = 2;
     endtime = 0;
+    boxwidth = 0;
     board = [
         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
@@ -203,6 +207,7 @@ $('.answerchoice').click(function(e) {
         // showpoint();
         winCheck();
         processbar();
+        $('.answerchoice').hide();
         let optionCorrect = '#c' + chooseIdx;
         $(optionCorrect).css('background', '#A1755C');
     } else {
