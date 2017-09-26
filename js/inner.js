@@ -56,17 +56,94 @@ function shuffleArray(newboard) {
 
 
 // buildPlayBoard*****
-function buildPlayBoard(board, Difficultylevel) {
+// function buildPlayBoard(board, Difficultylevel) {
+//     //创造挖空的2D
+//     while (Difficultylevel > 0) {
+//         let x = Math.floor(Math.random() * 9);
+//         let y = Math.floor(Math.random() * 9);
+//         if (board[x][y] !== '.') {
+//             board[x][y] = '.';
+//             Difficultylevel--;
+//         }
+//     }
+//     return board;
+// }
+
+function buildspecialPlayBoard(useBoard) {
     //创造挖空的2D
-    while (Difficultylevel > 0) {
-        let x = Math.floor(Math.random() * 9);
-        let y = Math.floor(Math.random() * 9);
-        if (board[x][y] !== '.') {
-            board[x][y] = '.';
-            Difficultylevel--;
-        }
+    let x = 0;
+    // let y = 8;
+    for (let y = 0; y < 9; y++) {
+        useBoard[0][y] = '.';
     }
-    return board;
+
+
+    for (let y = 0; y < 9; y++) {
+        if (y !== 1 && y !== 2 && y !== 6 && y !== 7) {
+            useBoard[1][y] = '.';
+        }
+        // debugger
+    }
+
+    for (let y = 0; y < 9; y++) {
+        if (y !== 0 && y !== 3 && y !== 5 && y !== 8) {
+            useBoard[2][y] = '.';
+        }
+        // debugger
+    }
+
+
+    for (let y = 0; y < 9; y++) {
+        if (y !== 0 && y !== 4 && y !== 8) {
+            useBoard[3][y] = '.';
+        }
+        // debugger
+    }
+
+
+    for (let y = 0; y < 9; y++) {
+        if (y !== 0 && y !== 8) {
+            useBoard[4][y] = '.';
+        }
+        // debugger
+    }
+
+
+    for (let y = 0; y < 9; y++) {
+        if (y !== 1 && y !== 7) {
+            useBoard[5][y] = '.';
+        }
+        // debugger
+    }
+
+
+    for (let y = 0; y < 9; y++) {
+        if (y !== 2 && y !== 6) {
+            useBoard[6][y] = '.';
+        }
+        // debugger
+    }
+
+
+    for (let y = 0; y < 9; y++) {
+        if (y !== 3 && y !== 5) {
+            useBoard[7][y] = '.';
+        }
+        // debugger
+    }
+
+    for (let y = 0; y < 9; y++) {
+        if (y !== 4) {
+            useBoard[8][y] = '.';
+        }
+        // debugger
+    }
+
+    for (let i = 0; i < useBoard.length; i++) {
+        useBoard[i] = useBoard[i].join('');
+    }
+    let displayval = useBoard.join('');
+    return displayval;
 }
 
 // checkboard:
@@ -80,7 +157,6 @@ function origintoStr(board) {
 }
 
 function playboardStr(useBoard, Difficultylevel) {
-    // var buildboardStr = buildPlayBoard(board, Difficultylevel);
     while (Difficultylevel > 0) {
         let x = Math.floor(Math.random() * 9);
         let y = Math.floor(Math.random() * 9);

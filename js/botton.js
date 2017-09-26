@@ -1,18 +1,22 @@
 var Difficultylevel, board, answerBoardStr, displayval, chooseIdx, chooseAns, idName, level, point = 0,
-    endtime = 0 ,boxwidth = 0 ,processlevel, fixIdx;
+    endtime = 0,
+    boxwidth = 0,
+    processlevel, fixIdx;
 $(document).ready(function() {
     $(".level-container").hide();
     $("#gameboard").hide();
     document.getElementById("easy").innerHTML = "EASY";
     document.getElementById("midium").innerHTML = "MIDIUM";
-    document.getElementById("hard").innerHTML = "HARD";
+    document.getElementById("hard").innerHTML = "SPECIAL";
 })
 $('#start').click(function() {
     $('#start').hide();
     $(".level-container").show();
     $('.gameover').hide();
     $('.progress').hide();
-    $("#box").animate({width: 0}, 1000);
+    $("#box").animate({
+        width: 0
+    }, 1000);
 })
 $("#easy").click(function() {
     $('#gameboard td').css('background', '#A1755C');
@@ -21,7 +25,9 @@ $("#easy").click(function() {
     level = 10;
     endtime = 0;
     boxwidth = 0;
-    $("#box").animate({width: 0}, 1000);
+    $("#box").animate({
+        width: 0
+    }, 1000);
     board = [
         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
@@ -55,7 +61,9 @@ $("#easy").click(function() {
 })
 
 $("#midium").click(function() {
-    $("#box").animate({width: 0}, 1000);
+    $("#box").animate({
+        width: 0
+    }, 1000);
     $('#gameboard td').css('background', '#A1755C');
     Difficultylevel = 20;
     processlevel = 30;
@@ -94,12 +102,14 @@ $("#midium").click(function() {
     $("#gameboard").show();
 })
 
-$("#hard").click(function() {
-    $("#box").animate({width: 0}, 1000);
+$("#hard").click(function(e) {
+    $("#box").animate({
+        width: 0
+    }, 1000);
     $('#gameboard td').css('background', '#A1755C');
-    Difficultylevel = 50;
-    level = 50;
-    processlevel = 12;
+    // Difficultylevel = 50;
+    level = 61;
+    processlevel = 9.8;
     endtime = 0;
     boxwidth = 0;
     board = [
@@ -118,6 +128,7 @@ $("#hard").click(function() {
         solveBoardStr[i] = solveBoardStr[i].join('');
     }
     answerBoardStr = origintoStr(solveBoardStr);
+
     let useBoard = [];
     for (let i = 0; i < solveBoardStr.length; i++) {
         let arr = [];
@@ -126,15 +137,23 @@ $("#hard").click(function() {
         }
         useBoard.push(arr);
     }
-    displayval = playboardStr(useBoard, Difficultylevel);
+    // debugger
+    displayval = buildspecialPlayBoard(useBoard);
 
     for (var i = 0; i < 81; i++) {
         document.getElementById('c' + i).innerHTML = displayval[i];
     }
     $("#gameboard").show();
+
+    // if (gameboard.innerHTML !== '.') {
+    //     $('#' + gameboard.id).css('background', '#eee');
+    // }
+    
 })
 $("#test").click(function() {
-    $("#box").animate({width: 0}, 1000);
+    $("#box").animate({
+        width: 0
+    }, 1000);
     $('#gameboard td').css('background', '#A1755C');
     Difficultylevel = 2;
     processlevel = 300;
@@ -192,7 +211,7 @@ $('#gameboard').click(function(e) {
 
         $('.answerchoice').show();
 
-            document.getElementById('c' + fixIdx).innerHTML = '.';
+        document.getElementById('c' + fixIdx).innerHTML = '.';
     } else {
         $('.answerchoice').hide();
         $('#gameboard td').css('background', '#A1755C');
@@ -224,7 +243,7 @@ $('.answerchoice').click(function(e) {
         let optionName = '#c' + chooseIdx;
         $(optionName).css('background', 'red');
         document.getElementById('c' + chooseIdx).innerHTML = answerIdx;
-        fixIdx =chooseIdx;
+        fixIdx = chooseIdx;
 
     }
 
@@ -234,7 +253,9 @@ $('.answerchoice').click(function(e) {
 // boxwidth = endtime * 50;
 
 function processbar() {
-    $("#box").animate({width: boxwidth}, 1000);
+    $("#box").animate({
+        width: boxwidth
+    }, 1000);
     // debugger
 }
 $('.progress').hide();
