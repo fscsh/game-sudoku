@@ -146,9 +146,9 @@ $("#hard").click(function(e) {
     $("#gameboard").show();
 
     for (var i = 0; i < 81; i++) {
-            if (document.getElementById('c' + i).innerHTML != '.') {
-                $('#c' +i ).css('background', '#eee');
-            }
+        if (document.getElementById('c' + i).innerHTML != '.') {
+            $('#c' + i).css('background', '#eee');
+        }
     }
 
 })
@@ -208,15 +208,26 @@ $('#gameboard').click(function(e) {
         idName = e.target.id;
         $('#gameboard td').css('background', '#A1755C');
         $('#' + idName).css('background', '#eee');
+        for (var i = 0; i < 81; i++) {
+            if (document.getElementById('c' + i).innerHTML != '.') {
+                $('#c' + i).css('background', '#eee');
+            }
+        }
         chooseIdx = idName.substring(idName.lastIndexOf('c') + 1);
         chooseAns = answerBoardStr[chooseIdx];
 
         $('.answerchoice').show();
 
         document.getElementById('c' + fixIdx).innerHTML = '.';
+
     } else {
         $('.answerchoice').hide();
         $('#gameboard td').css('background', '#A1755C');
+    }
+    for (var i = 0; i < 81; i++) {
+        if (document.getElementById('c' + i).innerHTML != '.') {
+            $('#c' + i).css('background', '#eee');
+        }
     }
 })
 
@@ -247,6 +258,11 @@ $('.answerchoice').click(function(e) {
         document.getElementById('c' + chooseIdx).innerHTML = answerIdx;
         fixIdx = chooseIdx;
 
+    }
+    for (var i = 0; i < 81; i++) {
+        if (document.getElementById('c' + i).innerHTML != '.') {
+            $('#c' + i).css('background', '#eee');
+        }
     }
 
 })
