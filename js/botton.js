@@ -145,10 +145,12 @@ $("#hard").click(function(e) {
     }
     $("#gameboard").show();
 
-    // if (gameboard.innerHTML !== '.') {
-    //     $('#' + gameboard.id).css('background', '#eee');
-    // }
-    
+    for (var i = 0; i < 81; i++) {
+            if (document.getElementById('c' + i).innerHTML != '.') {
+                $('#c' +i ).css('background', '#eee');
+            }
+    }
+
 })
 $("#test").click(function() {
     $("#box").animate({
