@@ -96,29 +96,6 @@ function buildPlayBoard(board,Difficultylevel) {
     return board;
 }
 
-// // midium
-// function buildPlayBoardMidium(board) {
-//     //创造挖空的2D
-//     board = isValidSudoku(board);
-//     for (let i = 0; i < 20; i++) {
-//         let x = Math.floor(Math.random() * 9);
-//         let y = Math.floor(Math.random() * 9);
-//         board[x][y] = '.';
-//     }
-//     return board;
-// }
-//
-// //hard
-// function buildPlayBoardHard(board) {
-//     //创造挖空的2D
-//     board = isValidSudoku(board);
-//     for (let i = 0; i < 40; i++) {
-//         let x = Math.floor(Math.random() * 9);
-//         let y = Math.floor(Math.random() * 9);
-//         board[x][y] = '.';
-//     }
-//     return board;
-// }
 
 
 // checkboard:

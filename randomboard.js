@@ -4,7 +4,6 @@ function test() {
     // console.log(board);
 
 
-    //对角线生成随机数；
     ///left-top;
     let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     let j = 0;
@@ -95,43 +94,7 @@ function test() {
     return board;
     // return splitboard(board);
 }
-//填充其他并检查；
 
-// function splitboard(board) {
-//
-//     // console.log(board);
-//     for (let i = 0; i < 9; i++) {
-//         for (let j = 0; j < 9; j++) {
-//             if (board[i][j] === '.') {
-//                 // let sucesscreat = 0;
-//                 // while (sucesscreat = 0) {
-//                 //应该是这里错
-//                 while (i !== 9 && j !== 9) {
-//                     // for (let s = 1; s < 10; s++) {
-//                     let s = Math.floor(Math.random() * (8)) + 1; //随机填充其他；
-//                     s = s.toString();
-//                     console.log(board);
-//                     if (helper(s, i, j, board)) {
-//                         board[i][j] = s;
-//                         // console.log('now board');
-//                         if (splitboard(board)) {
-//                             // sucesscreat =1;
-//                             return board;
-//                         } else {
-//                             board[i][j] = '.';
-//                             // return ;
-//                         }
-//                         // }
-//
-//                     }
-//
-//                 }
-//                 // return false;
-//             }
-//         }
-//     }
-//     return board;
-// }
 
 function helper(s, i, j, board) {
 
